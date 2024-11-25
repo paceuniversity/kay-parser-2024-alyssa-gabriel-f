@@ -166,7 +166,12 @@ public class ConcreteSyntax {
 			// TODO TO BE COMPLETED
 			a.target = new Variable();
 			a.target.id = token.getValue();
+			// if used int in declaration
+			String temp = token.getValue();
 			token = input.nextToken();
+			if (!token.getValue().equals(":=") && temp.equals("int")) {
+				throw new RuntimeException(SyntaxError("integer"));
+			}
 			match(":=");
 			a.source = expression();
 		} else
