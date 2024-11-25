@@ -142,7 +142,7 @@ public class ConcreteSyntax {
 	}
 
 	private Block statements() {
-		// Block --> '{' Statements '}'
+		// Block --> '{' Statements '}' 
 		Block b = new Block();
 		while (!token.getValue().equals("}")) {
 			b.blockmembers.addElement(statement());

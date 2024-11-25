@@ -131,7 +131,7 @@ public class TokenStream {
 				return t;
 
 			case '&':
-				// Look or &&
+				// Look or && 
 				nextChar = readChar();
 				if (nextChar == '&') {
 					t.setValue(t.getValue() + nextChar);
