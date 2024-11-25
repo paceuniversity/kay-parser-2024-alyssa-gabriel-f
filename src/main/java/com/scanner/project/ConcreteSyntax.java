@@ -159,7 +159,9 @@ public class ConcreteSyntax {
 			a.target.id = token.getValue();
 			token = input.nextToken();
 			match(":=");
+			token = input.nextToken();
 			a.source = expression();
+			token = input.nextToken();
 			match(";");
 		} else
 			throw new RuntimeException(SyntaxError("Identifier"));
