@@ -1,4 +1,0 @@
-main{
-integer i
-i := 7;
-}
