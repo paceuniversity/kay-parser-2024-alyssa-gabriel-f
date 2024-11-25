@@ -1,19 +1,19 @@
-package com.scanner.project;
 // ConcreteSyntax.java
 
 // Implementation of the Recursive Descent Parser algorithm
 
-//  Each method corresponds to a concrete syntax grammar rule, 
+//  Each method corresponds to a concrete syntax grammar rule,
 // which appears as a comment at the beginning of the method.
 
 // This code DOES NOT implement a parser for KAY. You have to complete
 // the code and also make sure it implements a parser for KAY - not something
 // else.
+package com.scanner.project;
 
 public class ConcreteSyntax {
 
 	// READ THE COMPLETE FILE FIRST
-	
+
 	// Instance variables
 	public Token token; // current token that is considered from the input stream
 	public TokenStream input; // stream of tokens generated in by the lexical analysis
@@ -45,7 +45,7 @@ public class ConcreteSyntax {
 	// Implementation of the Recursive Descent Parser
 
 	public Program program() {
-		// TODO TO BE COMPLETED 
+		// TODO TO BE COMPLETED
 		// Program --> main '{' Declarations Statements '}'
 		Program p = new Program();
 		match("main");
@@ -57,7 +57,7 @@ public class ConcreteSyntax {
 	}
 
 	private Declarations declarations() {
-		// TODO TO BE COMPLETED 
+		// TODO TO BE COMPLETED
 		// Declarations --> { Declaration }*
 		Declarations ds = new Declarations();
 		while (token.getValue().equals("integer")
@@ -83,7 +83,7 @@ public class ConcreteSyntax {
 		else if (token.getValue().equals("bool"))
 			t = new Type(token.getValue());
 		else
-			throw new RuntimeException(SyntaxError("int | boolean"));
+			throw new RuntimeException(SyntaxError("integer | boolean"));
 		token = input.nextToken(); // pass over the type
 		return t;
 	}
@@ -286,9 +286,9 @@ public class ConcreteSyntax {
 			Value v = null;
 			if (isInteger(token.getValue()))
 				v = new Value(Integer.parseInt(token.getValue()));
-			else if (token.getValue().equals("True"))
+			else if (token.getValue().equals("true"))
 				v = new Value(true);
-			else if (token.getValue().equals("False"))
+			else if (token.getValue().equals("false"))
 				v = new Value(false);
 			else
 				throw new RuntimeException(SyntaxError("Literal"));
