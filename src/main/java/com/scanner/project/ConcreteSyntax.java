@@ -60,7 +60,7 @@ public class ConcreteSyntax {
 		// TODO TO BE COMPLETED 
 		// Declarations --> { Declaration }*
 		Declarations ds = new Declarations();
-		while (token.getValue().equals("integer")
+		while (token.getValue().equals("int")
 				|| token.getValue().equals("bool")) {
 			declaration(ds);
 		}
@@ -78,7 +78,7 @@ public class ConcreteSyntax {
 		// TODO TO BE COMPLETED
 		// Type --> integer | bool
 		Type t = null;
-		if (token.getValue().equals("integer"))
+		if (token.getValue().equals("int"))
 			t = new Type(token.getValue());
 		else if (token.getValue().equals("bool"))
 			t = new Type(token.getValue());
